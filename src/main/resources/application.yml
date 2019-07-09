@@ -1,0 +1,19 @@
+server:
+  port: 9000
+spring:
+  rabbitmq:
+    addresses: localhost:5672
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: axon-output
+          group: application-events
+logging:
+  level:
+    org:
+      springframework: DEBUG
